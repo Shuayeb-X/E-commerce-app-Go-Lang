@@ -18,20 +18,11 @@ var productList []Product
 
 func getProducts(w http.ResponseWriter, r *http.Request) {
 
-	if r.Method != "GET" {
-		http.Error(w, "Please give me Get Request", 400)
-		return
-	}
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(productList)
+	sendData(w,productList,http.StatusOK)
+
 }
 
 func createProduct(w http.ResponseWriter, r *http.Request) {
-
-	if r.Method != "POST" {
-		http.Error(w, "Please give me Post Request", 400)
-		return
-	}
 
 	var newProduct Product
 
@@ -44,8 +35,14 @@ func createProduct(w http.ResponseWriter, r *http.Request) {
 	newProduct.ID = len(productList) + 1
 	productList = append(productList, newProduct)
 
-	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(newProduct)
+	sendata(w,newProduct,http.StatusCreated)
+}
+
+func sendData(w http.ResponseWriter, data interface{}, status int) {
+
+	w.WriteHeader(status)
+
+	json.NewEncoder(w).Encode(data)
 }
 
 // Initial products
