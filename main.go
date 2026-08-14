@@ -1,9 +1,7 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"net/http"
+	"ecommerce/cmd"
 )
 
 type Product struct {
@@ -67,59 +65,10 @@ func init() {
 	productList = append(productList, prd1, prd2)
 }
 
+=======
+
 func main() {
 
-	mux := http.NewServeMux()
+	cmd.Serve()
 
-	mux.Handle(
-		"GET /products",
-		corsMiddleware(http.HandlerFunc(getProducts)),
-	)
-	mux.Handle("POST /create-product",
-		corsMiddleware(http.HandlerFunc(createProduct)),
-	)
-
-	fmt.Println("Server Running on :3000")
-
-	globalRouter := globalRouter(mux)
-
-	err := http.ListenAndServe(":3000", globalRouter)
-
-	if err != nil {
-		fmt.Println("Error starting server:", err)
-	}
-}
-
-func corsMiddleware(next http.Handler) http.Handler {
-
-	handleCors := func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST,PUT,PATCH,DELETE, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type,Sayem")
-		w.Header().Set("Content-Type", "application/json")
-
-		next.ServeHTTP(w, r)
-	}
-	return http.HandlerFunc(handleCors)
-
-}
-
-func globalRouter(mux *http.ServeMux) http.Handler {
-
-	handleAllReq := func(w http.ResponseWriter, r *http.Request) {
-
-		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST,PUT,PATCH,DELETE, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type,Sayem")
-		w.Header().Set("Content-Type", "application/json")
-		if r.Method == "OPTIONS" {
-			w.WriteHeader(200)
-			return
-		} else {
-			mux.ServeHTTP(w, r)
-		}
-
-	}
-
-	return http.HandlerFunc(handleAllReq)
 }
