@@ -2,7 +2,7 @@ package rest
 
 import (
 	"ecommerce/rest/handlers"
-	"ecommerce/rest/middlewares"
+	middleware "ecommerce/rest/middlewares"
 	"net/http"
 )
 
@@ -31,7 +31,6 @@ func initRoutes(mux *http.ServeMux, manager *middleware.Manager) {
 		),
 	)
 
-
 	mux.Handle(
 		"PUT /products/{id}",
 		manager.With(
@@ -40,4 +39,11 @@ func initRoutes(mux *http.ServeMux, manager *middleware.Manager) {
 		),
 	)
 
+	mux.Handle(
+		"DELETE /products/{id}",
+		manager.With(
+			http.HandlerFunc(handlers.DeleteProduct),
+			middleware.Arekta,
+		),
+	)
 }
