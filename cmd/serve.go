@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"ecommerce/config"
 	"ecommerce/middleware"
 	"fmt"
 	"net/http"
@@ -8,6 +9,7 @@ import (
 
 func Serve() {
 
+	config.GetConfig()
 	manager := middleware.NewManager()
 
 	manager.Use(
