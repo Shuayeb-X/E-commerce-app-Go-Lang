@@ -1,12 +1,11 @@
 package handlers
 
 import (
+	"ecommerce/database"
+	"ecommerce/util"
 	"encoding/json"
 	"fmt"
 	"net/http"
-
-	"ecommerce/database"
-	"ecommerce/util"
 )
 
 func CreateProduct(w http.ResponseWriter, r *http.Request) {
@@ -21,7 +20,7 @@ func CreateProduct(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	createdProduct:= database.Store(newProduct)
+	createdProduct := database.Store(newProduct)
 
 	util.SendData(
 		w,

@@ -1,8 +1,8 @@
 package rest
 
 import (
-	"ecommerce/rest/middlewares"
 	"ecommerce/config"
+	middleware "ecommerce/rest/middlewares"
 	"fmt"
 	"net/http"
 	"strconv"
