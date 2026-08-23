@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
+	
 	"ecommerce/database"
 	"ecommerce/util"
 )
@@ -33,9 +34,5 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	util.SendData(
-		w,
-		usr,
-		http.StatusOK,
-	)
+	util.SendData(w,usr,http.StatusOK)
 }

@@ -11,7 +11,6 @@ func initRoutes(mux *http.ServeMux, manager *middleware.Manager) {
 		"GET /products",
 		manager.With(
 			http.HandlerFunc(handlers.GetProducts),
-			middleware.Arekta,
 		),
 	)
 
@@ -19,7 +18,6 @@ func initRoutes(mux *http.ServeMux, manager *middleware.Manager) {
 		"POST /products",
 		manager.With(
 			http.HandlerFunc(handlers.CreateProduct),
-			middleware.Arekta,
 		),
 	)
 
@@ -27,7 +25,6 @@ func initRoutes(mux *http.ServeMux, manager *middleware.Manager) {
 		"GET /products/{id}",
 		manager.With(
 			http.HandlerFunc(handlers.GetProduct),
-			middleware.Arekta,
 		),
 	)
 
@@ -35,7 +32,6 @@ func initRoutes(mux *http.ServeMux, manager *middleware.Manager) {
 		"PUT /products/{id}",
 		manager.With(
 			http.HandlerFunc(handlers.UpdateProduct),
-			middleware.Arekta,
 		),
 	)
 
@@ -43,21 +39,18 @@ func initRoutes(mux *http.ServeMux, manager *middleware.Manager) {
 		"DELETE /products/{id}",
 		manager.With(
 			http.HandlerFunc(handlers.DeleteProduct),
-			middleware.Arekta,
 		),
 	)
 	mux.Handle(
 		"POST /users",
 		manager.With(
 			http.HandlerFunc(handlers.CreateUser),
-			middleware.Arekta,
 		),
 	)
 	mux.Handle(
 		"POST /users/login",
 		manager.With(
 			http.HandlerFunc(handlers.Login),
-			middleware.Arekta,
 		),
 	)
 }
