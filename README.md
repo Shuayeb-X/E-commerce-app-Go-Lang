@@ -61,7 +61,7 @@ Middleware can be used for:
 - Security checks
 - Custom request processing
 
-### 🏗️ Modular Architecture
+###  Modular Architecture
 
 The project separates different responsibilities into dedicated packages.
 
@@ -76,7 +76,7 @@ The architecture includes:
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Technology | Purpose |
 |------------|---------|
@@ -157,7 +157,7 @@ GET /products
 ]
 ```
 ![Get Products API Screenshot](screenshots/get-products.png)
-
+- - -
 ##  Create Product
 
 Creates a new product.
@@ -228,7 +228,7 @@ PUT /products/{id}
 ![Get Products API Screenshot](screenshots/get-products.png)
 
 ---
-## 🗑️ Delete Product
+##  Delete Product
 
 Deletes an existing product.
 
@@ -246,6 +246,172 @@ DELETE /products/{id}
 }
 ```
 
+![Get Products API Screenshot](screenshots/get-products.png)
+
 ---
 
+#  JWT Authentication
 
+The project includes JWT-based authentication functionality.
+
+JSON Web Tokens are used to securely represent authenticated users.
+
+The JWT payload can contain user information such as:
+
+```json
+{
+  "sub": 1,
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john@example.com",
+  "is_shopowner": false
+}
+```
+
+The token can then be used by middleware to identify authenticated users and protect restricted API endpoints.
+
+![Get Products API Screenshot](screenshots/get-products.png)
+---
+##  Authentication Testing
+
+### JWT Token Generation
+
+
+![JWT Authentication](screenshots/jwt-authentication.png)
+
+---
+
+#  Middleware System
+
+The project uses a middleware manager to make middleware handling more organized.
+
+Example architecture:
+
+```text
+HTTP Request
+      │
+      ▼
+Middleware Manager
+      │
+      ▼
+Authentication Middleware
+      │
+      ▼
+Authorization Middleware
+      │
+      ▼
+API Handler
+      │
+      ▼
+HTTP Response
+```
+
+Middleware allows reusable request processing logic without duplicating code inside every handler.
+
+---
+
+# 🧪 API Testing
+
+The APIs are tested using **Postman**.
+
+Testing includes:
+
+- Sending GET requests
+- Sending POST requests
+- Sending PUT requests
+- Sending DELETE requests
+- Testing JSON request bodies
+- Checking API responses
+- Testing HTTP status codes
+- Testing authentication functionality
+- Testing protected routes
+
+---
+
+# ▶️ Getting Started
+
+Follow these instructions to run the project locally.
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- Go 1.20 or later
+- Git
+- Postman (optional, for API testing)
+
+---
+
+## Clone the Repository
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+---
+
+## Navigate to the Project
+
+```bash
+cd E-commerce-app
+```
+
+---
+
+## Install Dependencies
+
+```bash
+go mod tidy
+```
+
+---
+
+## Configure Environment Variables
+
+Create a `.env` file if required by the application.
+
+
+```env
+VERSION =1.0.0
+SERVICE_NAME =ECOMMERCE
+HTTP_PORT=3000y
+```
+
+# What I Learned From This Project
+
+Through this project, I practiced and improved my understanding of:
+
+- Golang programming
+- Backend development
+- REST API development
+- HTTP methods
+- HTTP request handling
+- HTTP response handling
+- JSON encoding and decoding
+- Structs and data modeling
+- Middleware architecture
+- JWT authentication
+- Authorization concepts
+- Modular project architecture
+- API testing with Postman
+- Git and GitHub workflow
+
+#  Future Improvements
+
+The project can be extended with additional e-commerce features in the future.
+
+Planned improvements may include:
+- Shopping cart system
+- Order management
+- Payment integration
+- Database integration
+- PostgreSQL/MySQL support
+- Role-based authorization
+- Admin dashboard API
+- Pagination
+- Product search
+- Product categories
+- Docker containerization
+- CI/CD pipeline
+- Unit testing
+- Deployment to cloud infrastructure
