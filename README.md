@@ -197,10 +197,17 @@ POST /products
     
 }
 
+Before :
+
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/Product%20created(postman).png)
+
+After:
+
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/Verify%20Product%20Created(postman).png)
 ```
 ![Get Products API Screenshot](screenshots/get-products.png)
 ---
-##  Update Product
+##  Search & Update Product 
 
 Updates an existing product.
 
@@ -214,25 +221,20 @@ PUT /products/{id}
 
 ```json
 {
-  "name": "Updated iPhone 15",
-  "description": "Updated Apple smartphone description",
-  "price": 125000,
-  "img_url": "https://example.com/updated-iphone.jpg"
+    "name": "Chalta",
+    "description": "Chalta color is green",
+    "price": 80,
+    "img_url": "https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt2a5be8abcac1a15f/667081fd5014f14c2a033ce6/types-of-cherries-on-branch.jpg"
 }
 ```
-
 ### Example Response
+Before:
 
-```json
-{
-  "id": 1,
-  "name": "Updated iPhone 15",
-  "description": "Updated Apple smartphone description",
-  "price": 125000,
-  "img_url": "https://example.com/updated-iphone.jpg"
-}
-```
-![Get Products API Screenshot](screenshots/get-products.png)
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/Before%20update%20product%20info(postman).png)
+
+After:
+
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/after%20update%20product%20info.png)
 
 ---
 ##  Delete Product
@@ -252,8 +254,9 @@ DELETE /products/{id}
   "message": "Product deleted successfully"
 }
 ```
-
-![Get Products API Screenshot](screenshots/get-products.png)
+![image alt]()
+![image alt]()
+![image alt]()
 
 ---
 
@@ -267,13 +270,14 @@ The JWT payload can contain user information such as:
 
 ```json
 {
-  "sub": 1,
-  "first_name": "John",
-  "last_name": "Doe",
-  "email": "john@example.com",
+  "sub": 45,
+  "first_name": "Shuayeb",
+  "last_name": "zet",
+  "email": "zt@gmail.com",
   "is_shopowner": false
 }
 ```
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/check%20jwt.png)
 
 The token can then be used by middleware to identify authenticated users and protect restricted API endpoints.
 
@@ -284,10 +288,36 @@ The token can then be used by middleware to identify authenticated users and pro
 ### JWT Token Generation
 
 
-![JWT Authentication](screenshots/jwt-authentication.png)
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/jwt%20auth.png)
 
 ---
 
+# User
+## User Created
+![image alt]()
+https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/User%20created.png
+
+---
+## Login successfully
+
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/login%20successfully.png)
+
+---
+## Login Failed
+
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/login%20failed.png)
+
+![image alt]()
+
+
+![image alt]()
+
+
+![image alt]()
+
+![image alt]()
+
+![image alt]()
 #  Middleware System
 
 The project uses a middleware manager to make middleware handling more organized.
@@ -335,7 +365,7 @@ Testing includes:
 
 ---
 
-# ▶️ Getting Started
+#  Getting Started
 
 Follow these instructions to run the project locally.
 
