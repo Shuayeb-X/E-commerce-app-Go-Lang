@@ -172,22 +172,23 @@ POST /products
 
 ```json
 {
-  "name": "iPhone 15",
-  "description": "Apple smartphone",
-  "price": 120000,
-  "img_url": "https://example.com/iphone.jpg"
-}
+        "name": "Lemon",
+        "description": "Lemon color is Green",
+        "price": 60,
+        "img_url": "https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt2a5be8abcac1a15f/667081fd5014f14c2a033ce6/types-of-cherries-on-branch.jpg"
+    }
 ```
 
 ### Example Response
 
 ```json
 {
-  "id": 1,
-  "name": "iPhone 15",
-  "description": "Apple smartphone",
-  "price": 120000,
-  "img_url": "https://example.com/iphone.jpg"
+   "id": 3
+    "name": "Lemon",
+   "description": "Lemon color is Green",
+    "price": 60,
+   "img_url": "https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt2a5be8abcac1a15f/667081fd5014f14c2a033ce6/types-of-         cherries-on-branch.jpg"
+    
 }
 
 ```
