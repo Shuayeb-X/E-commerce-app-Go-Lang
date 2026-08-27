@@ -156,7 +156,13 @@ GET /products
   }
 ]
 ```
-![Get Products API Screenshot](screenshots/get-products.png)
+Web Version:
+
+![Get Products API Screenshot](Pictures/list products(web).png)
+
+Postman:
+
+![Get Products API Screenshot](Pictures/List Products(postman).png)
 - - -
 ##  Create Product
 
