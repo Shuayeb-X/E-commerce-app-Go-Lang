@@ -205,7 +205,6 @@ After:
 
 ![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/Verify%20Product%20Created(postman).png)
 ```
-![Get Products API Screenshot](screenshots/get-products.png)
 ---
 ##  Search & Update Product 
 
@@ -241,6 +240,8 @@ After:
 
 Deletes an existing product.
 
+
+
 **Method**
 
 ```http
@@ -251,12 +252,22 @@ DELETE /products/{id}
 
 ```json
 {
-  "message": "Product deleted successfully"
+  "message": "Succefully Delete the product"
 }
 ```
-![image alt]()
-![image alt]()
-![image alt]()
+Before Delete the product list:
+
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/Before%20Delete(postamn).png)
+
+Successfully Deleted the product:
+
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/Delete%20.png)
+
+
+After Delete the product list:
+
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/after%20Delete.png)
+
 
 ---
 
