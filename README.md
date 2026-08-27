@@ -158,11 +158,11 @@ GET /products
 ```
 Web Version:
 
-![Get Products API Screenshot](Pictures/list products(web).png)
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/list%20products(web).png)
 
 Postman:
+![image alt](https://github.com/Shuayeb-X/E-commerce-app-Go-Lang/blob/main/Pictures/List%20Products(postman).png)
 
-![Get Products API Screenshot](Pictures/List Products(postman).png)
 - - -
 ##  Create Product
 
