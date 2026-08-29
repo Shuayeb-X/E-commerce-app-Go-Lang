@@ -38,9 +38,11 @@ func CreateJwt(secret string, data Payload) (string, error) {
 	}
 	payloadB64 := base64UrlEncode(byteArrData)
 
-	byteArrSecret := []byte(secret)
+	
 
 	message := headerB64 + "." + payloadB64
+	
+	byteArrSecret := []byte(secret)
 	byteArrMessage := []byte(message)
 
 	h := hmac.New(sha256.New, byteArrSecret)

@@ -12,7 +12,7 @@ type Config struct {
 	Version     string
 	ServiceName string
 	HttpPort    int
-	// JwtSecretKey string
+	JwtSecretKey string
 }
 
 var configurations Config
@@ -45,19 +45,19 @@ func loadConfig() {
 	}
  
 
-	//jwtsecretkey:=os.Getenv("JWT_SECRET_KEY")
+	jwtsecretkey:=os.Getenv("JWT_SECRET_KEY")
 
 
-	/* if jwtsecretkey == ""{
-		fmt.Println("JWT is required")
+	if jwtsecretkey == ""{
+		fmt.Println("JWT  secret key is required")
 		os.Exit(1)
 	}
-		*/
+		
 	configurations = Config{
 		Version:     version,
 		ServiceName: servicename,
 		HttpPort:    int(port),
-		//JwtSecretKey: jwtsecretkey,
+		JwtSecretKey: jwtsecretkey,
 	}
 }
 
