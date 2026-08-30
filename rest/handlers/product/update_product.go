@@ -1,14 +1,15 @@
-package handlers
+package product
 
 import (
 	"ecommerce/database"
 	"ecommerce/util"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
 )
 
-func DeleteProduct(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) UpdateProduct(w http.ResponseWriter, r *http.Request) {
 
 	productId := r.PathValue("id")
 
@@ -18,6 +19,9 @@ func DeleteProduct(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Please give me valid id", http.StatusBadRequest)
 		return
 	}
+	var newProduct database.Product
+
+	err = json.NewDecoder(r.Body).Decode(&newProduct)
 
 	if err != nil {
 		fmt.Println(err)
@@ -25,6 +29,8 @@ func DeleteProduct(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	database.Delete(pID)
-	util.SendData(w, "Succefully Delete the product", 201)
+
+	newProduct.ID=pID
+	database.Update(newProduct)
+	util.SendData(w, "Succefully updated the product information", 201)
 }
